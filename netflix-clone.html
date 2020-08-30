@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLowe-N Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <!-- Check and update font family later -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|
+    Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/jl-logo.svg" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro"><strong>Netflix</strong> clone</h1>
+        <p class="section__subtitle section__subtitle--intro">Reusable React</p>
+        <img class="intro__img" src="img/portfolio-01-netflix-clone.png" alt="Netflix clone app">
+    </section>
+
+
+
+    <div class="portfolio-item-individual">
+        <div class="portfolio-item-individual__btn">
+            <a href="https://jlowen-netflix.netlify.app/" class="btn" target="_blank">See Live Demo</a>
+        </div>
+        <p>This project recreates the primary Netflix user interface using the
+            React JavaScript library. Unauthenticated users land on the homepage
+            which features several reusable compound styled components - Opt-In Form,
+            a service benefits Jumbotron, and a FAQ accordion. Once a user signs
+            up for an account, they can log in to authenticate and will be redirected
+            to the browse page automatically. Finally, the browse page functions
+            similar to commercial Netflix (sorry though, no free feature-length movies 😖).
+        </p>
+        <img src="img/netflix-clone-code-details.jpg" alt="Example code from Netflix clone">
+        <p>This project solves several common problems in software development.
+            Components are reusable which keeps the code DRY and maintainable.
+            The compound nature of the subcomponents and styling makes the API
+            flexible for the development team. Properties can still be passed in to
+            the components through the use of the JavaScript spread operator. These
+            passed in properties can be used with the coupled styled-components library
+            to turn styling on and off using template literals.
+        </p>
+        <p>Modern features of the React environment are used extend the functionality
+            and reduce code complexity. React hooks are used to hook into the lifecycle
+            of the components which minimizes the need for class-based components.
+            State is included in the functional components by using the useState and
+            useContext hook. By using the Context API, I was able to share State
+            across components without prop drilling (simplifies the code). The Context API
+            allows us to avoid using more complex state management dependencies such
+            as Redux.
+        </p>
+        <p>Google Firebase is used on the backend to provide user creation and
+            authentication, while Firestore also provides a solution to store database
+            information. Through the use of a customer hook, I was able to bring
+            Firebase into React Context and the React Router library to create protected
+            routes so unauthenticated users are redirected to sign up or log in
+            prior to accessing subscriber content.
+        </p>
+        <p><strong>React allows us to extend application functionality and reduce code complexity.</strong></p>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="justin.g.lowen@gmail.com" class="footer__link">justin.g.lowen@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/JLowe-N/">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/justinlowen/
+                ">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -15,7 +15,7 @@
 
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-accent: #eb6734;
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -24,6 +24,8 @@
 
     --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
           0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+    --bs-accent: 0.25em 0.25em 0.75em rgba(235, 103, 52, 0.25),
+          0.125em 0.125em 0.25em rgba(235, 103, 52, 0.15);
 }
 
 @media (min-width: 800px) {
@@ -140,8 +142,10 @@ header {
 }
 
 .logo {
-    max-width: 100px;
+    max-width: 40px;
+    margin-top: 0;
 }
+
 
 .nav {
     position: fixed;
@@ -186,7 +190,7 @@ header {
     cursor: pointer;
     position: absolute;
     right: 1em;
-    top: 1em;
+    top: 1.5em;
     z-index: 1000;
 }
 
@@ -290,7 +294,7 @@ header {
     background-color: var(--clr-dark);
     background-image: url(../img/services-bg.jpg);
     background-size: cover;
-    background-blend: multiply;
+    background-blend-mode: multiply;
     color: var(--clr-light);
     text-align: center;
 }
@@ -321,14 +325,8 @@ header {
 
 @media (min-width: 800px) {
     .services {
-        display: flex;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .service + .service {
-        margin-left: 2em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr)
     }
 }
 
@@ -383,15 +381,19 @@ header {
 
 .portfolio {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-gap: 1em;
+    justify-content: space-evenly;
 }
 
 .portfolio__item {
+    box-shadow: var(--bs-accent);
     background: var(--clr-accent);
     overflow: hidden;
 }
 
 .portfolio__img {
+    object-fit: cover;
     transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
     opacity 250ms linear;
 }
@@ -456,6 +458,10 @@ header {
     padding: 0 2em 2em;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.portfolio-item-individual__btn {
+    text-align: center;
 }
 
 .portfolio-item-individual p {
