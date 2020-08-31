@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLowe-N Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <!-- Check and update font family later -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|
+    Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#work" class="nav__link">
+                <img src="img/jl-logo.svg" alt="">
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro" Pic Some><strong>Brewdog Beer Finder</strong></h1>
+        <p class="section__subtitle section__subtitle--intro">API Frontend App</p>
+        <img class="intro__img" src="img/portfolio-03-punkapi-beer-app.png" alt="Brewdog Beer Finder App">
+    </section>
+
+    <div class="portfolio-item-individual">
+        <div class="portfolio-item-individual__btn">
+            <a href="https://justin-lowen.herokuapp.com/punk-api-beer-app" class="btn" target="_blank">See Live Demo</a>
+        </div>
+        <p>This app provides a front-end application for the Punk API.
+            The API, which I access through JavaScript's fetch function, returns
+            JSON data on Brewdog brewery's catalogue of beers. Modern JavaScript
+            is used to fetch and filter data from the API.
+        </p>
+        <div class="portfolio-item-individual__img-frame">
+            <img src="img/punk-api-details.png" alt="Filtering by hops and ABV in the app">
+        </div>
+        <p>The beer database can be filtered by bitterness (measured in International Bitterness Units or IBU).
+            The bitterness filter is represented by a hop cone SVG image - hop cones
+            grow on a vine and are the brewing ingredient that provides bittering
+            to beer. I've also built another frontend filter for alcoholic strength
+            represented by the beer mug SVG. The filters use an input HTML element
+            with an event listener that will update the fetch query parameters going
+            to the API. This simplifies the user experience so they don't have
+            to understand the query logic of the API. Pagination is accomplished
+            in a similar manner
+        </p>
+        <div class="portfolio-item-individual__img-frame">
+            <img src="img/beer-app-code-details.jpg" alt="code showing template literal mapping of API data">
+        </div>
+        <p>Template literals - another modern JavaScript feature - are used to
+            render and update the DOM with the appropriate beer data fetched from
+            the API. They provide an easy way to map the JSON data into the HTML.
+            I really enjoy using template literals as they feel very familiar to
+            writing code in Python. It makes the code much more readable, maintainable,
+            and just friendly to work with.
+        </p>
+        <p>
+            <a href="https://punkapi.com/" target="_blank">Punk API Documentation</a>
+            <br>
+            <a href="https://www.brewdog.com/usa/" target="_blank">Brewdog Brewery</a>
+        </p>
+        <p><strong>Modern JavaScript techniques such as fetch, arrow functions,
+                async-await, destructuring, and template literals allow for more readable
+                and therefore more maintainable code. All new code should be written
+                with ES6 and above features (while minding browser support) while
+                existing code should be refactored whenever possible.
+            </strong></p>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="justin.g.lowen@gmail.com" class="footer__link">justin.g.lowen@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/JLowe-N/">
+                    <i class="fab fa-github"></i>
+                    Github
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/justinlowen/
+                ">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
