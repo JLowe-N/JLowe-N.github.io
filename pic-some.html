@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLowe-N Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <!-- Check and update font family later -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|
+    Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/jl-logo.svg" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="index.html#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro" Pic Some><strong>E-Commerce SPA</strong></h1>
+        <p class="section__subtitle section__subtitle--intro">React Router Single Page App</p>
+        <img class="intro__img" src="img/portfolio-02-picsome.png" alt="Pic Some E-Commerce App">
+    </section>
+
+
+
+    <div class="portfolio-item-individual">
+        <div class="portfolio-item-individual__btn">
+            <a href="https://jlowe-n.github.io/picsomereact/" class="btn" target="_blank">See Live Demo</a>
+        </div>
+        <p>The E-commerce site I've created is a Single Page Application (SPA) that
+            uses the React Router library to extend React.js to include page routing.
+            The layout is designed for a photo print store, and allows users to
+            add pictures to their cart for later review and purchase. The useState
+            hook is used to track picture favorites and cart status. Clicking the
+            cart icon will take the user to the purchase screen where items can also be
+            removed from the cart.
+        </p>
+        <div class="portfolio-item-individual__img-frame">
+            <img src="img/pic-some-details-left.png" alt="Picture selection page from Pic Some App">
+            <img src="img/pic-some-details-right.png" alt="Cart page from Pic Some App">
+        </div>
+        <p>The useContext hook is used as part of the Context API in React. This allows
+            state to be shared between the Photos and Cart page components. In a larger
+            application, using the ContextAPI can simplify the state architecture and
+            avoid unnecessary prop drilling that could cause performance issues with
+            unnecessary re-renders.
+        </p>
+        <p>I also used a custom hook called useHover which is used to track hover states on the photos
+            with the useRef and useEffect hooks. This custom hook allows us to avoid
+            repetition of code managing icon visibility on the hover states. Using both
+            built-in and custom hooks allows us to simplify the code and either build new
+            components as functions, or refactor existing codebase written as class-based
+            components.
+        </p>
+        <p><strong>React Router and Hooks allows us to create Single Page Applications
+                with functional components to simplify code architecture and make code
+                more easily maintainable.</strong></p>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="justin.g.lowen@gmail.com" class="footer__link">justin.g.lowen@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/JLowe-N/">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/justinlowen/
+                ">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

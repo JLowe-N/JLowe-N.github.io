@@ -464,6 +464,20 @@ header {
     text-align: center;
 }
 
+.portfolio-item-individual__img-frame {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em; */
+    width: 100%;
+    text-align: center;
+}
+
+.portfolio-item-individual img {
+    display: inline-block;
+    box-shadow: var(--bs)
+}
+
 .portfolio-item-individual p {
     max-width: 600px;
     margin-left: auto;
