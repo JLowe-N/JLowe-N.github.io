@@ -320,13 +320,17 @@ header {
 
 .service {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 3em auto;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
     .services {
         display: grid;
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3em;
+    }
+    .service {
+        margin: 0 auto;
     }
 }
 
