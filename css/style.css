@@ -458,6 +458,8 @@ header {
     padding: .5em;
 }
 
+/* Portfolio Item Posts */
+
 .portfolio-item-individual {
     padding: 0 2em 2em;
     max-width: 1000px;
@@ -465,14 +467,18 @@ header {
 }
 
 .portfolio-item-individual__btn {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
     text-align: center;
 }
 
+.portfolio-item-individual__btn a {
+    margin: 0 20px;
+}
+
 .portfolio-item-individual__img-frame {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 1em; */
     width: 100%;
     text-align: center;
 }
