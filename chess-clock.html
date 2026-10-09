@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Justin Lowen">
+    <meta name="description" content="Justin Lowen's build of an open source, 3D printed
+    ESP32 chess clock - hand-soldered perf board, adapted firmware for a different ESP32
+    board, and hardware debugging with Claude as a pair-debugging partner.">
+    <meta property="fb:app_id" content="772302390220934">
+    <meta property="og:title" content="Justin Lowen - ESP32 Chess Clock Build">
+    <meta property="og:image" content="https://jlowe-n.github.io/img/portfolio-04-chess-clock.jpg">
+    <meta property="og:site_name" content="Justin Lowen">
+    <meta property="og:description" content="Justin Lowen's build of an open source, 3D printed
+    ESP32 chess clock - hand-soldered perf board, adapted firmware for a different ESP32
+    board, and hardware debugging with Claude as a pair-debugging partner.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jlowe-n.github.io/chess-clock">
+    <title>JLowe-N Portfolio Website</title>
+    <link rel="shortcut icon" href="img/jl-logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|
+    Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/#work" class="nav__link">
+                <img src="img/jl-logo.svg" alt="">
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="/#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="/#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="/#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro"><strong>ESP32 Chess Clock</strong></h1>
+        <p class="section__subtitle section__subtitle--intro">Hardware Build &amp; Debugging</p>
+        <img class="intro__img" src="img/portfolio-04-chess-clock.jpg" alt="Finished ESP32 chess clock">
+    </section>
+
+
+
+    <div class="portfolio-item-individual">
+        <div class="portfolio-item-individual__btn">
+            <a href="https://www.instructables.com/Chess-Clock-Open-Source-3D-Printed-and-Powered-by-/"
+                class="btn" target="_blank">See the Guide</a>
+            <a href="https://www.instructables.com/Chess-Clock-Open-Source-3D-Printed-and-Powered-by-/#discuss"
+                class="btn" target="_blank">See My Build Notes</a>
+        </div>
+        <p>This is my build of an open source chess clock designed by
+            <a href="https://www.instructables.com/member/baiblagoi/" target="_blank">baiblagoi</a>
+            and published on Instructables. The design uses a 3D printed case, two TM1637 seven-segment
+            displays, six tactile buttons and a magnetic turn lever. Inside, a hand-soldered perf board
+            boosts two 18650 cells to 5V and switches the power with a P-channel MOSFET. An ESP32 runs
+            the clock and supports increments, bonus time after a set move and per-turn timing that
+            can be exported over Bluetooth. I didn't design the clock. My work was the build itself
+            and the changes I made to get it working with the parts I had.
+        </p>
+        <div class="portfolio-item-individual__img-frame">
+            <img src="img/chess-clock-front.jpg" alt="Finished chess clock with both displays running">
+        </div>
+        <p>The guide is written for a 38-pin ESP32-WROOM module, but I had ordered a 30-pin DevKitC
+            by mistake. That meant remapping every display and button pin in the firmware, and
+            the shorter board no longer fit the original mounting clamps. Some of its GPIO pins also
+            had resistors already in line, which threw off the button network until I added
+            resistors to compensate. I also moved the 5V booster behind the MOSFET so the
+            power switch cuts it off completely.
+        </p>
+        <div class="portfolio-item-individual__img-frame">
+            <img src="img/chess-clock-board-top.jpg" alt="Component side of the hand-soldered extension board">
+            <img src="img/chess-clock-board-bottom.jpg" alt="Solder side of the extension board">
+        </div>
+        <p>Fitting everything into the case took more work. I flipped the ESP32 and perf board,
+            which moved the board's built-in hall sensor away from the lever magnets. To fix that,
+            I wired a separate hall sensor on the opposite side. Even with that sensor centered, the
+            reading only changed by about 50 units between lever positions, so I set the turn-detection
+            threshold carefully. The rest was mechanical. Stiff 22 AWG solid-core wire snapped
+            several button legs, so I switched to spliced 30 AWG stranded wire. I sanded the female
+            headers so they would sit side by side on the 12-pin connector, and packed foam around
+            the TPU buttons to stop them rattling.
+        </p>
+        <p>I used Claude as a debugging partner for the whole build. I described what I was seeing
+            on the bench, then we worked through the ESP32 pinout to plan the remap and traced the
+            unexpected readings back to the inline GPIO resistors. We also checked my changes to the
+            power circuit and used raw sensor logs to tune the hall-sensor threshold. Working that way
+            let me make design changes with confidence instead of guessing, and fix each problem
+            as I hit it.
+        </p>
+        <p><strong>The finished clock works reliably on battery power. A clean build would have been
+                easier, but adapting the design to different hardware taught me far more. You can
+                see it running in the video I posted with my notes on the Instructables page.</strong></p>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="mailto:justin.g.lowen@gmail.com" class="footer__link">justin.g.lowen@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/JLowe-N/">
+                    <i class="fab fa-github"></i>
+                    Github
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/justinlowen/
+                ">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
