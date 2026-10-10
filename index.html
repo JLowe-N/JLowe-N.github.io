@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Justin Lowen">
     <meta name="description" content="The professional software developer
-    portfolio for Justin Lowen.  Justin provides web development services
-    using modern JavaScript and React for frontend as well Python and Django for backend.">
+    portfolio for Justin Lowen, a Python and JavaScript software engineer focused on
+    web application performance, infrastructure and coaching developers.">
     <meta property="fb:app_id" content="772302390220934">
     <meta property="og:title" content="Justin Lowen's Software Developer Portfolio">
     <meta property="og:image" content="img/justin-lowen-software-developer.png">
     <meta property="og:site_name" content="Justin Lowen">
     <meta property="og:description" content="The professional software developer
-    portfolio for Justin Lowen.  Justin provides web development services
-    using modern JavaScript and React for frontend as well Python and Django for backend.">
+    portfolio for Justin Lowen, a Python and JavaScript software engineer focused on
+    web application performance, infrastructure and coaching developers.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.justinlowen.dev">
     <title>JLowe-N Portfolio Website</title>
@@ -43,6 +43,7 @@
                 <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
                 <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
                 <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
                 <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
             </ul>
         </nav>
@@ -60,33 +61,32 @@
         <h2 class="section__title section__title--services">What I do</h2>
         <div class="services">
             <div class="service">
-                <h3>Development</h3>
-                <p>I understand that modern designs need to be mobile-ready and
-                    responsive. I like to build mobile first and ensure that
-                    the interface adjusts with larger devices.
+                <h3>Python Web Apps</h3>
+                <p>I build and maintain Python web applications and the APIs
+                    behind them, mostly with Tornado and PostgreSQL. I also
+                    write JavaScript for custom frontends and UI extensions,
+                    and Python scripting for integrations and automation.
                 </p>
             </div> <!-- / service -->
             <div class="service">
-                <h3>JavaScript & React</h3>
-                <p>React and modern JavaScript allow for simpler frontend code
-                    architecture that is faster to build and easier to maintain.
-                    This includes using React hooks to maintain state and context
-                    which enables me to build and refactor React into functional components.
+                <h3>Performance & Infrastructure</h3>
+                <p>My favorite problems are the mystery slowdowns. I use metrics,
+                    profiling and query analysis to find out why an app is slow
+                    or unstable, then fix it. I also work on Docker and
+                    Kubernetes deployments across on-premises servers, AWS and Azure.
                 </p>
             </div> <!-- / service -->
             <div class="service">
-                <h3>Python & Django</h3>
-                <p>I enjoy working in Python because it is easy to debug and
-                    the syntax is very readable. I also have a strong interest
-                    in data science and have used Python to build visualizations
-                    and analyze experimental data in my professional roles. The
-                    Django framework provides a quick way to build a backend or
-                    fullstack application.
+                <h3>Developer Coaching</h3>
+                <p>I help other developers build on a platform through pairing,
+                    code review, training sessions, documentation and example
+                    code. When a problem gets hard, I dig in and then share
+                    what I learned so the next team doesn't get stuck.
                 </p>
             </div> <!-- / service -->
         </div> <!-- /services -->
 
-        <a href="#work" class="btn">My Services</a>
+        <a href="#experience" class="btn">My Experience</a>
     </section>
 
 
@@ -100,12 +100,38 @@
                 how to collaborate on business-critical projects. Working in
                 large teams can be challenging, with everyone bringing their
                 own experiences and perspective as we tackle tough problems.
+                Today I am a software engineer at L7 Informatics, where I
+                spend my time on Python web app performance, infrastructure
+                and coaching the developers who build on our platform.
                 Every member of the team is critical to the success of the
                 project and my approach has always been to learn from others,
                 provide mentorship in turn, and ensure success.</p>
         </div>
 
         <img class="about-me__img" src="/img/jlowen-02.jpg" alt="justin traveling">
+    </section>
+
+    <!-- Experience -->
+    <section class="experience" id="experience">
+        <h2 class="section__title section__title--experience">Experience</h2>
+        <p class="section__subtitle section__subtitle--experience">Where I work now</p>
+
+        <a href="l7-informatics" class="experience__card">
+            <img src="img/l7-informatics-work.svg" alt="" class="experience__img">
+            <div class="experience__body">
+                <h3 class="experience__company">L7 Informatics</h3>
+                <p class="experience__meta">Austin, Texas &middot; Feb 2021 &ndash; Present</p>
+                <ul class="experience__roles">
+                    <li><strong>Lead Software Maintenance Engineer</strong> &middot; Dec 2021 &ndash; Present</li>
+                    <li><strong>Senior Application Engineer</strong> &middot; Feb 2021 &ndash; Dec 2021</li>
+                </ul>
+                <p>Python and JavaScript engineer on L7|ESP, a platform for clinical
+                    diagnostics, genomics and medicine manufacturing labs. I focus on
+                    performance and scalability in Python and PostgreSQL, deployments
+                    on Docker and Kubernetes, and coaching customer developers.</p>
+                <span class="experience__link">Read more &rarr;</span>
+            </div>
+        </a>
     </section>
 
     <!-- My Work -->

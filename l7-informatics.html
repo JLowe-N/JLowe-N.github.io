@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Justin Lowen">
+    <meta name="description" content="Justin Lowen's work as a Python and JavaScript software engineer
+    at L7 Informatics - performance and scalability work on a Python web platform and PostgreSQL,
+    Kubernetes and Docker deployments, and coaching customer developers who build on L7|ESP.">
+    <meta property="fb:app_id" content="772302390220934">
+    <meta property="og:title" content="Justin Lowen - Software Engineer at L7 Informatics">
+    <meta property="og:image" content="https://jlowe-n.github.io/img/l7-informatics-work.svg">
+    <meta property="og:site_name" content="Justin Lowen">
+    <meta property="og:description" content="Justin Lowen's work as a Python and JavaScript software engineer
+    at L7 Informatics - performance and scalability work on a Python web platform and PostgreSQL,
+    Kubernetes and Docker deployments, and coaching customer developers who build on L7|ESP.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jlowe-n.github.io/l7-informatics">
+    <title>JLowe-N Portfolio Website</title>
+    <link rel="shortcut icon" href="img/jl-logo.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|
+    Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/#work" class="nav__link">
+                <img src="img/jl-logo.svg" alt="">
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="/#services" class="nav__link">My Services</a></li>
+                <li class="nav__item"><a href="/#about" class="nav__link">About Me</a></li>
+                <li class="nav__item"><a href="/#experience" class="nav__link">Experience</a></li>
+                <li class="nav__item"><a href="/#work" class="nav__link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro"><strong>L7 Informatics</strong></h1>
+        <p class="section__subtitle section__subtitle--intro">Software Engineer, 2021 &ndash; Present</p>
+        <img class="intro__img" src="img/l7-informatics-work.svg"
+            alt="Diagram of a frontend, Python web app and PostgreSQL stack inside a container platform, with latency dropping after a fix">
+    </section>
+
+
+
+    <div class="portfolio-item-individual">
+        <div class="portfolio-item-individual__btn">
+            <a href="https://l7informatics.com/esp/" class="btn" target="_blank">About L7|ESP</a>
+            <a href="https://www.linkedin.com/in/justinlowen/" class="btn" target="_blank">My LinkedIn</a>
+        </div>
+
+        <ul class="role-list">
+            <li class="role">
+                <h3 class="role__title">Lead Software Maintenance Engineer</h3>
+                <p class="role__dates">Dec 2021 &ndash; Present</p>
+            </li>
+            <li class="role">
+                <h3 class="role__title">Senior Application Engineer</h3>
+                <p class="role__dates">Feb 2021 &ndash; Dec 2021</p>
+            </li>
+        </ul>
+
+        <p>L7 Informatics builds <a href="https://l7informatics.com/esp/" target="_blank">L7|ESP</a>,
+            a platform that clinical diagnostics, genomics and medicine manufacturing labs use to run
+            their lab information management (LIMS), manufacturing execution (MES) and electronic lab
+            notebook (ELN) workflows in one place. I have worked there as a Python and JavaScript
+            software engineer since February 2021, based in Austin, Texas. My work falls into three
+            areas: the Python web application itself, the performance and infrastructure problems that
+            come with running it, and coaching the customer developers who build on top of it.
+        </p>
+        <p>I started as a Senior Application Engineer, writing Python and JavaScript integrations for
+            bioinformatics lab equipment and processes. That meant Python scripts for lab automation,
+            such as generating reports, triggering emails, ingesting analysis spreadsheets and connecting
+            to outside APIs. I also added API endpoints in Python's Tornado framework, built custom
+            frontends and UI extensions, and deployed builds to test and production Linux servers. It
+            was a fast way to learn how labs actually use the software, and that has shaped everything
+            I've done since.
+        </p>
+        <p>As Lead Software Maintenance Engineer, I spend much of my time finding and fixing scalability
+            and availability problems in the Python web application and its PostgreSQL databases. My
+            favorite kind of problem is the mystery slowdown, where production gets slow and nobody
+            knows why. I start with metrics in Prometheus and Grafana to see when and where it happens.
+            Then I profile the running app with py-spy or cProfile and check the database with
+            pg_stat_statements and EXPLAIN until the evidence points to a cause.
+        </p>
+        <p>The cause is usually one of a few things. It might be a slow PostgreSQL query from a missing
+            index, an N+1 pattern or an ORM-generated query that does far more work than it needs to.
+            It might be blocking work in Tornado's event loop that stalls every other request on that
+            worker. Sometimes the app runs short of memory or database connections, or table bloat
+            builds up faster than autovacuum can clear it. Large data loads, like bulk ingests of
+            sample and instrument data or big reports and exports, bring their own problems. Once a
+            fix ships, I go back to the same metrics to confirm it worked.
+        </p>
+        <p>L7|ESP runs in many kinds of environments, from on-premises VMs to Kubernetes clusters in
+            Amazon Web Services and Azure. I test and develop deployments with Docker, Docker Compose
+            and Kubernetes, and I maintain Helm charts and Kubernetes manifests. When a customer's
+            environment misbehaves, I help troubleshoot it directly. That usually means working out
+            where the infrastructure, the database and the application are getting in each other's way.
+        </p>
+        <p>The other half of my role is developer advocacy. Labs have their own developers who build
+            integrations, scripts and frontends on L7|ESP and connect it to external APIs. I pair with
+            them one on one, review their code, run training sessions and write documentation and
+            example code. When a support case turns into a hard problem, I take it as an escalation,
+            solve it, and then turn what I learned into guidance so the next team doesn't run into it.
+        </p>
+        <p><strong>The two halves feed each other. Performance work shows me where the platform needs
+                to be faster and sturdier, and coaching shows me where developers get stuck. Both
+                help labs spend less time fighting their software and more time on their science.</strong></p>
+
+        <ul class="skill-list" aria-label="Tools and technologies">
+            <li>Python</li>
+            <li>Tornado</li>
+            <li>JavaScript</li>
+            <li>PostgreSQL</li>
+            <li>Docker</li>
+            <li>Docker Compose</li>
+            <li>Kubernetes</li>
+            <li>Helm</li>
+            <li>AWS</li>
+            <li>Azure</li>
+            <li>Linux</li>
+            <li>Prometheus</li>
+            <li>Grafana</li>
+            <li>py-spy</li>
+            <li>cProfile</li>
+            <li>pg_stat_statements</li>
+        </ul>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="mailto:justin.g.lowen@gmail.com" class="footer__link">justin.g.lowen@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/JLowe-N/">
+                    <i class="fab fa-github"></i>
+                    Github
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/justinlowen/
+                ">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

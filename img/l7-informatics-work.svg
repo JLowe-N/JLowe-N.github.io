@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" role="img" aria-labelledby="t d">
+  <title id="t">Python web platform performance and infrastructure</title>
+  <desc id="d">A frontend, Python web app and PostgreSQL stack running inside a container platform, above a latency chart that drops after a fix.</desc>
+  <style>
+    text { font-family: 'Source Code Pro', Menlo, Consolas, monospace; }
+    .lbl { fill: #fff; font-size: 17px; font-weight: 700; }
+    .small { fill: #eb6734; font-size: 12px; letter-spacing: .04em; }
+    .muted { fill: #bbb; font-size: 11px; }
+  </style>
+
+  <rect width="500" height="500" fill="#303030"/>
+
+  <!-- container platform boundary -->
+  <rect x="36" y="40" width="428" height="262" rx="10" fill="none" stroke="#eb6734" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="54" y="66" class="small">K8S · DOCKER · AWS · AZURE · ON-PREM</text>
+
+  <!-- application stack -->
+  <rect x="76" y="84" width="348" height="50" rx="6" fill="none" stroke="#fff" stroke-width="2"/>
+  <text x="250" y="115" class="lbl" text-anchor="middle">frontend · javascript</text>
+
+  <line x1="250" y1="134" x2="250" y2="158" stroke="#fff" stroke-width="2"/>
+
+  <rect x="76" y="158" width="348" height="50" rx="6" fill="#eb6734"/>
+  <text x="250" y="189" class="lbl" text-anchor="middle" style="fill:#303030">python · tornado</text>
+
+  <line x1="250" y1="208" x2="250" y2="232" stroke="#fff" stroke-width="2"/>
+
+  <rect x="76" y="232" width="348" height="50" rx="6" fill="none" stroke="#fff" stroke-width="2"/>
+  <text x="250" y="263" class="lbl" text-anchor="middle">postgresql</text>
+
+  <!-- latency chart -->
+  <text x="54" y="342" class="small">P95 LATENCY</text>
+  <line x1="54" y1="356" x2="54" y2="456" stroke="#777" stroke-width="1.5"/>
+  <line x1="54" y1="456" x2="446" y2="456" stroke="#777" stroke-width="1.5"/>
+  <line x1="262" y1="356" x2="262" y2="456" stroke="#bbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="270" y="370" class="muted">fix deployed</text>
+  <polyline fill="none" stroke="#eb6734" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"
+    points="58,410 78,392 96,402 114,378 132,396 150,370 168,388 186,364 204,384 222,368 240,380 258,372 276,430 296,436 320,432 344,438 368,434 392,437 416,433 442,436"/>
+</svg>
