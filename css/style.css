@@ -542,12 +542,10 @@ header {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.portfolio-item-individual__btn a {
-    margin: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em 40px;
 }
 
 .portfolio-item-individual__img-frame {
