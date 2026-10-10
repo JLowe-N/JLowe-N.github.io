@@ -375,6 +375,78 @@ header {
     }
 }
 
+/* Experience */
+
+.experience {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section__subtitle--experience {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.experience__card {
+    display: block;
+    text-align: left;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: var(--bs);
+    transition: box-shadow 250ms ease-in-out;
+}
+
+.experience__card:hover,
+.experience__card:focus {
+    box-shadow: var(--bs-accent), var(--bs);
+}
+
+.experience__img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    background: var(--clr-dark);
+}
+
+.experience__body {
+    padding: 1.5em;
+}
+
+.experience__company {
+    margin-bottom: .25em;
+}
+
+.experience__meta {
+    margin: 0 0 1em;
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+}
+
+.experience__roles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.experience__link {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+}
+
+@media (min-width: 700px) {
+    .experience__card {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+    }
+
+    .experience__img {
+        height: 100%;
+        max-height: none;
+    }
+}
+
 /* Portfolio */
 
 .my-work {
@@ -492,4 +564,39 @@ header {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+.role-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 2em auto 1em;
+    padding: 0;
+}
+
+.role {
+    border-left: 3px solid var(--clr-accent);
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+.portfolio-item-individual .role__dates {
+    margin: .25em 0 0;
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+}
+
+.skill-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 2em auto 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+}
+
+.skill-list li {
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    padding: .25em .75em;
+    font-size: .9rem;
 }
